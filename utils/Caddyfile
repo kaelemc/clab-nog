@@ -2,7 +2,21 @@
 	tls {
 		dns cloudflare "<API_TOKEN>"
 	}
-	
+
+	@eda host eda.topologies.dev
+	handle @eda {
+		reverse_proxy https://127.0.0.1:9443 {
+			transport http {
+				tls_insecure_skip_verify
+			}
+		}
+	}
+
+	@harbor host registry.topologies.dev
+	handle @harbor {
+		reverse_proxy http://127.0.0.1:8090
+	}
+
 	@pcap host es.topologies.dev
 	handle @pcap {
 		reverse_proxy http://127.0.0.1:5001
