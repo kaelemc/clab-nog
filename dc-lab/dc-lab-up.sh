@@ -1,4 +1,4 @@
-source vars.sh
+source ../vars.sh
 
 LAB_SUBDIR="dc-lab"
 
