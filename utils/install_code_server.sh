@@ -1,6 +1,12 @@
 # Install code-server for each user
 source ../vars.sh
 
+curl -fsSL https://code-server.dev/install.sh | sh
+# open https
+sudo firewall-cmd --zone=public --add-service=https --permanent
+sudo firewall-cmd --reload
+
+
 # Install the template unit file
 sudo tee /etc/systemd/system/code-server@.service > /dev/null <<'EOF'
 [Unit]
@@ -26,7 +32,7 @@ do
   # - The code server will run on port 808x where x is the group number
   #   ie. group7 will have code-server on port 8087
   #
-  # - The code server password = username. 
+  # - The code server password = username.
   #   ie. group7 password will be group7
   sudo tee /home/$USER/.config/code-server/config.yaml > /dev/null <<EOF
 bind-addr: 0.0.0.0:808$i
