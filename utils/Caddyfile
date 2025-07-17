@@ -1,0 +1,50 @@
+*.topologies.dev {
+	tls {
+		dns cloudflare "<API_TOKEN>"
+	}
+	
+	@pcap host es.topologies.dev
+	handle @pcap {
+		reverse_proxy http://127.0.0.1:5001
+	}
+
+	@group1 host group1.topologies.dev
+	handle @group1 {
+		reverse_proxy http://127.0.0.1:8081
+	}
+
+	@group2 host group2.topologies.dev
+	handle @group2 {
+		reverse_proxy http://127.0.0.1:8082
+	}
+
+	@group3 host group3.topologies.dev
+	handle @group3 {
+		reverse_proxy http://127.0.0.1:8083
+	}
+
+	@group4 host group4.topologies.dev
+	handle @group4 {
+		reverse_proxy http://127.0.0.1:8084
+	}
+
+	@group5 host group5.topologies.dev
+	handle @group5 {
+		reverse_proxy http://127.0.0.1:8085
+	}
+
+	@group6 host group6.topologies.dev
+	handle @group6 {
+		reverse_proxy http://127.0.0.1:8086
+	}
+
+	@group7 host group7.topologies.dev
+	handle @group7 {
+		reverse_proxy http://127.0.0.1:8087
+	}
+
+	@group8 host group8.topologies.dev
+	handle @group8 {
+		reverse_proxy http://127.0.0.1:8088
+	}
+}
