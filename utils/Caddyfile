@@ -61,4 +61,9 @@
 	handle @group8 {
 		reverse_proxy http://127.0.0.1:8088
 	}
+
+	@group9 host group9.topologies.dev
+	handle @group9 {
+		reverse_proxy http://127.0.0.1:8089
+	}
 }
