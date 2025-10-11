@@ -7,7 +7,7 @@ do
   # install the extension
   USER="$USER_PREFIX$i"
   HOME_DIR="/home/$USER"
-  sudo -u "$USER" code-server --install-extension "$EXTENSION" --user-data-dir "$HOME_DIR/.local/share/code-server"--extensions-dir "$HOME_DIR/.local/share/code-server/extensions"
+  sudo -u "$USER" code-server --install-extension "$EXTENSION" --user-data-dir "$HOME_DIR/.local/share/code-server" --extensions-dir "$HOME_DIR/.local/share/code-server/extensions" --force
 
   # augment the settings for edgeshark capture
   SETTINGS_PATH="/home/$USER/.local/share/code-server/User/settings.json"
